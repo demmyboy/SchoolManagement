@@ -71,9 +71,22 @@ class Student:
                 root.destroy()
                 return
 
+        def reset():
+            student_id.set(" ")
+            first_name.set(" ")
+            last_name.set(" ")
+            email.set(" ")
+            mobile.set(" ")
+            gender.set(" ")
 
-
-
+            maths.set("Core Unit")
+            science.set("Core Unit")
+            add_maths.set("Core Unit")
+            spreadsheet.set("Core Unit")
+            database.set("Core Unit")
+            animation.set("Core Unit")
+            digital_graphics.set("Core Unit")
+            programming.set("Core Unit")
 
         # Creating the widgets -----------------------
 
@@ -84,32 +97,32 @@ class Student:
 
         self.lbl_student_ID = Label(left_frame1, font=('arial', 12, 'bold'), text="Student ID ", bd=7, anchor=W)
         self.lbl_student_ID.grid(row=0, column=0)
-        self.txt_student_ID = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left')
+        self.txt_student_ID = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left', textvariable=student_id)
         self.txt_student_ID.grid(row=0, column=1)
 
         self.lbl_first_name = Label(left_frame1, font=('arial', 12, 'bold'), text="First Name ", bd=7, anchor=W)
         self.lbl_first_name.grid(row=1, column=0)
-        self.txt_first_name = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left')
+        self.txt_first_name = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left', textvariable=first_name)
         self.txt_first_name.grid(row=1, column=1)
 
         self.lbl_last_name = Label(left_frame1, font=('arial', 12, 'bold'), text="Last Name", bd=7, anchor=W)
         self.lbl_last_name.grid(row=2, column=0)
-        self.txt_last_name = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left')
+        self.txt_last_name = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left', textvariable=last_name)
         self.txt_last_name.grid(row=2, column=1)
 
         self.lbl_email = Label(left_frame1, font=('arial', 12, 'bold'), text="Email", bd=7, anchor=W)
         self.lbl_email.grid(row=3, column=0)
-        self.txt_email = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left')
+        self.txt_email = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left', textvariable=email)
         self.txt_email.grid(row=3, column=1)
 
         self.lbl_mobile = Label(left_frame1, font=('arial', 12, 'bold'), text="Mobile ", bd=7, anchor=W)
         self.lbl_mobile.grid(row=4, column=0)
-        self.txt_mobile = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left')
+        self.txt_mobile = Entry(left_frame1, font=('arial', 12, 'bold'), bd=7, width=40, justify='left', textvariable=mobile)
         self.txt_mobile.grid(row=4, column=1)
 
         self.lbl_gender = Label(left_frame1, font=('arial', 12, 'bold'), text="Gender", bd=7, anchor=W)
         self.lbl_gender.grid(row=5, column=0)
-        self.txt_gender = Combobox(left_frame1, font=('arial', 12, 'bold'), state='readonly', width=39)
+        self.txt_gender = Combobox(left_frame1, font=('arial', 12, 'bold'), state='readonly', width=39, textvariable=gender)
         self.txt_gender.grid(row=5, column=1)
         self.txt_gender['values'] = (' ', 'Female', 'Male')
         self.txt_gender.current(0)
@@ -119,28 +132,28 @@ class Student:
         self.lbl_maths = Label(left_frame2_left, font=('arial', 12, 'bold'), text="Maths", bd=7, anchor='w',
                                justify=LEFT)
         self.lbl_maths.grid(row=0, column=0, sticky=W)
-        self.txt_maths = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_maths = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=maths)
         self.txt_maths.grid(row=0, column=1)
         self.txt_maths['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_maths.current(0)
 
         self.lbl_science = Label(left_frame2_left, font=('arial', 12, 'bold'), text="Science", bd=7, anchor='e')
         self.lbl_science.grid(row=1, column=0, sticky=W)
-        self.txt_science = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_science = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=science)
         self.txt_science.grid(row=1, column=1)
         self.txt_science['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_science.current(0)
 
         self.lbl_AddMaths = Label(left_frame2_left, font=('arial', 12, 'bold'), text="AddMaths", bd=7, anchor=W)
         self.lbl_AddMaths.grid(row=2, column=0, sticky=W)
-        self.txt_AddMaths = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_AddMaths = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=add_maths)
         self.txt_AddMaths.grid(row=2, column=1)
         self.txt_AddMaths['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_AddMaths.current(0)
 
         self.lbl_spreadsheet = Label(left_frame2_left, font=('arial', 12, 'bold'), text="Spreadsheet", bd=7, anchor=W)
         self.lbl_spreadsheet.grid(row=3, column=0, sticky=W)
-        self.txt_spreadsheet = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_spreadsheet = Combobox(left_frame2_left, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=spreadsheet)
         self.txt_spreadsheet.grid(row=3, column=1)
         self.txt_spreadsheet['values'] = ('Core Unit', 'Yes', 'Complete')
         self.txt_spreadsheet.current(0)
@@ -148,14 +161,14 @@ class Student:
         # other side of the frame (right)
         self.lbl_database = Label(left_frame2_right, font=('arial', 12, 'bold'), text="Database", bd=7, anchor='w')
         self.lbl_database.grid(row=0, column=0, sticky=W)
-        self.txt_database = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_database = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=database)
         self.txt_database.grid(row=0, column=1)
         self.txt_database['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_database.current(0)
 
         self.lbl_animation = Label(left_frame2_right, font=('arial', 12, 'bold'), text="Animation", bd=7, anchor='w')
         self.lbl_animation.grid(row=1, column=0, sticky=W)
-        self.txt_animation = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_animation = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=animation)
         self.txt_animation.grid(row=1, column=1)
         self.txt_animation['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_animation.current(0)
@@ -163,7 +176,7 @@ class Student:
         self.lbl_programming = Label(left_frame2_right, font=('arial', 12, 'bold'), text="Programming", bd=7,
                                      anchor='w')
         self.lbl_programming.grid(row=2, column=0, sticky=W)
-        self.txt_programming = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_programming = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=programming)
         self.txt_programming.grid(row=2, column=1)
         self.txt_programming['values'] = ('Core Unit', 'Yes', 'No', 'Complete')
         self.txt_programming.current(0)
@@ -171,7 +184,7 @@ class Student:
         self.lbl_digital_graphics = Label(left_frame2_right, font=('arial', 12, 'bold'), text="Spreadsheet", bd=7,
                                           anchor='w')
         self.lbl_digital_graphics.grid(row=3, column=0, sticky=W)
-        self.txt_digital_graphics = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9)
+        self.txt_digital_graphics = Combobox(left_frame2_right, font=('arial', 12, 'bold'), state='readonly', width=9, textvariable=digital_graphics)
         self.txt_digital_graphics.grid(row=3, column=1)
         self.txt_digital_graphics['values'] = ('Core Unit', 'Yes', 'Complete')
         self.txt_digital_graphics.current(0)
@@ -198,16 +211,18 @@ class Student:
         self.btn_search = Button(top_frame1, pady=1, bd=4, font=('arial', 16, 'bold'), padx=24, width=8, text='Search')
         self.btn_search.grid(row=0, column=5)
 
-        self.btn_reset = Button(top_frame1, pady=1, bd=4, font=('arial', 16, 'bold'), padx=24, width=8, text='Reset')
+        self.btn_reset = Button(top_frame1, pady=1, bd=4, font=('arial', 16, 'bold'), padx=24, width=8, text='Reset',
+                                command=reset)
         self.btn_reset.grid(row=0, column=6)
 
-        self.btn_exit = Button(top_frame1, pady=1, bd=4, font=('arial', 16, 'bold'), padx=24, width=8, text='Exit', command=iExit)
+        self.btn_exit = Button(top_frame1, pady=1, bd=4, font=('arial', 16, 'bold'), padx=24, width=8, text='Exit',
+                               command=iExit)
         self.btn_exit.grid(row=0, column=7)
 
         ## info view
         scroll_y = Scrollbar(right_frame1a, orient=VERTICAL)
         self.student_records = ttk.Treeview(right_frame1a, height=18, columns=(
-        "stdid", "First Name", "Last Name", "Email", "Mobile", "Gender", "Maths", "Science", "Programing"),
+            "stdid", "First Name", "Last Name", "Email", "Mobile", "Gender", "Maths", "Science", "Programing"),
                                             yscrollcommand=scroll_y.set)
         scroll_y.pack(side=RIGHT, fill=Y)
 
